@@ -96,9 +96,9 @@ if (!((is_null($nome))||($nome == ""))){
 }
 
 if ($sucesso){
-    $dados = array("CREATE"=>"sucesso");
+    $dados = array("UPDATE"=>"sucesso");
 }else{
-    $dados = array("CREATE"=>"erro");
+    $dados = array("UPDATE"=>"erro");
 }
 echo json_encode ($dados);
 
