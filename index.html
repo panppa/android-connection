@@ -1,7 +1,6 @@
 <meta charset="utf-8">
 
 <h2>Test create</h2>
-
 <form action="create.php" method="post">
     CPF:<input type="text" name="cpf">
     NOME:<input type="text" name="nome">
@@ -17,11 +16,30 @@
     <br>
     <input type="submit" name="subimit" value="insert">
     <br><br>
-    <h2>Test read</h2>
-    
 </form>
 
-<form action="read.php" method="post">
+<h2>Test search</h2>
+<form action="search.php" method="post">
     CPF:<input type="text" name="cpf">
-    <input type="submit" name="subimit" value="insert">
+    <input type="submit" name="subimit" value="search">
+    <br><br>
+</form>
+
+
+<h2>Test update</h2>
+<form action="uptade.php" method="post">
+    CPF:<input type="text" name="cpf">
+    NOME:<input type="text" name="nome">
+    SOBRENOME:<input type="text" name="sobrenome">
+    <br>
+    EMAIL:<input type="text" name="email">
+    TELEFONE:<input type="text" name="telefone">
+    GENERO:<input type="text" name="genero">
+    <br>
+    NASCIMENTO:<input type="date" name="nascimento">
+    SENHA:<input type="text" name="senha">
+    ALERGIA:<input type="text" name="alergia">
+    <br>
+    <input type="submit" name="subimit" value="update">
+    <br><br>
 </form>
