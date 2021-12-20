@@ -11,6 +11,7 @@ $nascimento = $_POST['nascimento'];
 $senha = $_POST['senha'];
 $alergia = $_POST['alergia'];
 
+
 $sql_insert = "INSERT INTO paciente (cpf, nome, sobrenome, email, telefone, genero, nascimento, senha, alergia) VALUES(:CPF, :NOME, :SOBRENOME, :EMAIL, :TELEFONE, :GENERO, :NASCIMENTO, :SENHA, :ALERGIA)";
 
 $stmt = $PDO -> prepare($sql_insert);
@@ -26,7 +27,7 @@ $stmt->bindParam(':SENHA', $senha);
 $stmt->bindParam(':ALERGIA', $alergia);
 
 if($stmt->execute()){
-    $dados = array("CREATE"=>"OK");
+    $dados = array("CREATE"=>"sucesso");
 }else{
     $dados = array("CREATE"=>"erro");
 }

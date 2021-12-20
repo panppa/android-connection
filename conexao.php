@@ -6,10 +6,10 @@
     try{
         $PDO = new PDO($dsn, $usuario, $senha);
 
-        echo "<h1>connected</h1>";
+       // echo "<h1>connected</h1>";
 
     }catch(PDOException $erro){
-        echo "<h1>connection failed</h1>";
+       // echo "<h1>connection failed</h1>";
 
     }
     
