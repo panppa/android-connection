@@ -4,19 +4,18 @@ include "conexao.php";
 $cpf = $_POST['cpf'];
 
 
-$sql_read = "SELECT * FROM vacinacao WHERE cpfPaciente = 1";
+$sql_read = "SELECT * FROM vacinacao WHERE cpfPaciente = $cpf";
 $dados = $PDO ->query($sql_read);
-$resultado;
-while($paciente  = $dados->fetch(PDO::FETCH_OBJ)){
-    $resultado = array("cpf"=>$paciente-> cpf,
-                         "nome"=>$paciente-> nome,
-                         "sobrenome"=>$paciente-> sobrenome,
-                         "email"=>$paciente-> email,
-                         "telefone"=>$paciente-> telefone,
-                         "genero"=>$paciente-> genero,
-                         "nascimento"=>$paciente-> nascimento,
-                         "senha"=>$paciente-> senha,
-                         "alergia"=>$paciente-> alergia);
+$resultado = array();
+while($vacinacao  = $dados->fetch(PDO::FETCH_OBJ)){
+    $resultado[] = array("id"=>$vacinacao-> id,
+                         "vacina"=>$vacinacao-> vacina,
+                         "lote"=>$vacinacao-> lote,
+                         "validade"=>$vacinacao-> validade,
+                         "dataVacinacao"=>$vacinacao-> dataVacinacao,
+                         "cpfPaciente"=>$vacinacao-> cpfPaciente,
+                         "cpfFuncionario"=>$vacinacao-> cpfFuncionario
+                    );
 }
 echo json_encode($resultado);
 ?>
